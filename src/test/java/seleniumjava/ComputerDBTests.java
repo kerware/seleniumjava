@@ -45,6 +45,14 @@ public class ComputerDBTests {
 		assertTrue(  pageRecherche.ordinateurPresentDansListe("Apple Lisa"));
 		copieEcran("ApresRechercheApple");
 	}
+
+	@Test
+	public void RechercheApple() throws IOException {
+		pageRecherche = new PageRechercheComputerDB(driver);
+		pageRecherche.lancerRecherche("Apple");
+		assertTrue(  pageRecherche.ordinateurPresentDansListe("Apple IIe"));
+		
+	}
 	
 	@AfterAll
 	public static void finalisation() {
